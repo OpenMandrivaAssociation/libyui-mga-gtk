@@ -19,7 +19,6 @@ BuildRequires:	cmake
 BuildRequires:	ninja
 BuildRequires:	boost-devel
 BuildRequires:	doxygen
-BuildRequires:	texlive
 BuildRequires:	ghostscript
 BuildRequires:	graphviz
 Requires:	%{_lib}yui%{major}
@@ -74,13 +73,6 @@ This package provides headers files for libyui-mga-gtk development.
 
 %build
 %cmake \
-    -DYPREFIX=%{_prefix}  \
-    -DDOC_DIR=%{_docdir}  \
-    -DLIB_DIR=%{_lib}     \
-    -DINSTALL_DOCS=yes    \
-    -DENABLE_WERROR=0     \
-    -DINSTALL_DOCS=yes    \
-    -DCMAKE_BUILD_TYPE=RELWITHDEBINFO \
     -G Ninja
 
 %ninja_build
