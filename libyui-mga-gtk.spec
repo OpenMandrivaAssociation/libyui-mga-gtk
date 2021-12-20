@@ -63,9 +63,9 @@ This package provides headers files for libyui-mga-gtk development.
 %files -n %{develname}
 %{_includedir}/yui
 %{_libdir}/yui/lib*.so
-%{_libdir}/pkgconfig/libyui-mga-gtk.pc
-%{_libdir}/cmake/libyui-mga-gtk
-%doc %{_docdir}/libyui-mga-gtk%{major}
+#{_libdir}/pkgconfig/libyui-mga-gtk.pc
+#{_libdir}/cmake/libyui-mga-gtk
+#doc %{_docdir}/libyui-mga-gtk%{major}
 
 #-----------------------------------------------------------------------
 
