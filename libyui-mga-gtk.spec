@@ -10,6 +10,7 @@ License:	LGPLv2+
 Group:		System/Libraries
 Url:		https://github.com/manatools/libyui-mga-gtk
 Source0:	https://github.com/manatools/libyui-mga-gtk/archive/refs/tags/%{version}/%{name}-%{version}.tar.gz
+Patch0:     00-libyui-gtk-dep.patch
 
 BuildRequires:	pkgconfig(libyui)
 BuildRequires:	pkgconfig(libyui-gtk)
