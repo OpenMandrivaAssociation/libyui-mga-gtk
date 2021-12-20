@@ -1,19 +1,19 @@
-%define major 8
+%define major 15
 %define libname %mklibname yui %{major}-mga-gtk
 %define develname %mklibname yui-mga-gtk -d
 
 Summary:	UI abstraction library - Mageia extension Gtk plugin
 Name:		libyui-mga-gtk
-Version:	1.0.3
+Version:	1.2.0
 Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		https://github.com/manatools/libyui-mga-gtk
-Source0:	%{name}-%{version}.tar.gz
+Source0:	https://github.com/manatools/libyui-mga-gtk/archive/refs/tags/%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires:	pkgconfig(libyui)
-BuildRequires:	%{_lib}yui-gtk-devel
-BuildRequires:	%{_lib}yui-mga-devel
+BuildRequires:	pkgconfig(libyui-gtk)
+BuildRequires:	pkgconfig(libyui-mga)
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	cmake
 BuildRequires:	ninja
@@ -22,9 +22,9 @@ BuildRequires:	doxygen
 BuildRequires:	texlive
 BuildRequires:	ghostscript
 BuildRequires:	graphviz
-Requires:	libyui
-Requires:	libyui-mga
-Requires:	libyui-gtk
+Requires:	%{_lib}yui%{major}
+Requires:	%{_lib}yui%{major}-mga
+Requires:	%{_lib}yui%{major}-gtk
 
 %description
 %{summary}.
@@ -35,6 +35,9 @@ Requires:	libyui-gtk
 Summary:	%{summary}
 Group:		System/Libraries
 Requires:	libyui
+Requires:	%{_lib}yui%{major}
+Requires:	%{_lib}yui%{major}-mga
+Requires:	%{_lib}yui%{major}-gtk
 Provides:	%{name} = %{EVRD}
 Provides:	libyui%{major}-mga-gtk = %{EVRD}
 
@@ -70,7 +73,6 @@ This package provides headers files for libyui-mga-gtk development.
 %autosetup -p1
 
 %build
-./bootstrap.sh
 %cmake \
     -DYPREFIX=%{_prefix}  \
     -DDOC_DIR=%{_docdir}  \
