@@ -6,12 +6,13 @@
 Summary:	UI abstraction library - Mageia extension Gtk plugin
 Name:		libyui-mga-gtk
 Version:	1.2.0
-Release:	13
+Release:	14
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		https://github.com/manatools/libyui-mga-gtk
 Source0:	https://github.com/manatools/libyui-mga-gtk/archive/refs/tags/%{version}/%{name}-%{version}.tar.gz
 Patch0:     00-libyui-gtk-dep.patch
+Patch1:    boost-1.89.patch
 
 BuildRequires:	pkgconfig(libyui)
 BuildRequires:	pkgconfig(libyui-gtk)
